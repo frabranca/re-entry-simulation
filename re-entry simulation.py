@@ -122,34 +122,35 @@ while h>=0:
         print("\nThe splash down occurs",round((t-tmain)/60,3),"min after the main chute deployment, when the speed is:",round(v/0.3048,4),"ft/s")
         splashdown= True
 
-plt.plot()
+plt.figure(figsize=(10,10))
 
 plt.subplot(221)
 plt.plot(htab,vtab, "r-")
 plt.title("Speed vs Altitude")
 plt.xlabel("Altitude [kft]")
 plt.ylabel("Speed [ft\s]")
-
+plt.grid()
 
 plt.subplot(222)
 plt.plot(ttab,gtab,"b-")
 plt.title("Decelaration vs Time")
 plt.xlabel("Time [min]")
 plt.ylabel("Deceleration [g's]")
+plt.grid()
 
 plt.subplot(223)
 plt.plot(xtab,htab, "g-")
 plt.title("Y vs X")
 plt.xlabel("X position [km]")
 plt.ylabel("Y position [kft]")
-
+plt.grid()
 
 plt.subplot(224)
 plt.plot(ttab,htab, "y-")
 plt.title("Altitude vs Time")
 plt.xlabel("Time [min]")
 plt.ylabel("Altitude [kft]")
+plt.grid()
 
-plt.show()
+plt.savefig("results.png")
 
-dummy = input("Please press enter...")
